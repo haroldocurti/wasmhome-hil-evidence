@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="940" viewBox="0 0 1280 940" role="img" aria-labelledby="title desc">
+<title id="title">Fase diagnóstica r5: ativação funcional da v2</title>
+<desc id="desc">Dezoito observações em seis blocos. Nativo: zero de seis ativações em 60 segundos; interpretado e AOT: seis de seis.</desc>
+<rect width="1280" height="940" fill="white"/>
+<text x="55" y="58" font-family="DejaVu Sans,Arial,sans-serif" font-size="30" font-weight="bold" fill="#17324d">Fase diagnóstica r5 — ativação funcional da v2</text>
+<text x="55" y="91" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" fill="#435466">18 slots · seis blocos · perfis legados · resultado diagnóstico</text>
+<text x="55" y="139" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="bold" fill="#17324d">Desfecho por bloco</text>
+<text x="270" y="177" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="bold" fill="#17324d">Nativo / OTA</text>
+<rect x="115" y="194" width="310" height="45" rx="8" fill="#fae8e6" stroke="#ba5550"/>
+<text x="270" y="223" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#17324d">B1 · sem v2 ≤ 60 s</text>
+<rect x="115" y="250" width="310" height="45" rx="8" fill="#fae8e6" stroke="#ba5550"/>
+<text x="270" y="279" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#17324d">B2 · sem v2 ≤ 60 s</text>
+<rect x="115" y="306" width="310" height="45" rx="8" fill="#fae8e6" stroke="#ba5550"/>
+<text x="270" y="335" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#17324d">B3 · sem v2 ≤ 60 s</text>
+<rect x="115" y="362" width="310" height="45" rx="8" fill="#fae8e6" stroke="#ba5550"/>
+<text x="270" y="391" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#17324d">B4 · sem v2 ≤ 60 s</text>
+<rect x="115" y="418" width="310" height="45" rx="8" fill="#fae8e6" stroke="#ba5550"/>
+<text x="270" y="447" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#17324d">B5 · sem v2 ≤ 60 s</text>
+<rect x="115" y="474" width="310" height="45" rx="8" fill="#fae8e6" stroke="#ba5550"/>
+<text x="270" y="503" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#17324d">B6 · sem v2 ≤ 60 s</text>
+<text x="640" y="177" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="bold" fill="#17324d">WASM interpretado</text>
+<rect x="485" y="194" width="310" height="45" rx="8" fill="#e3f4ee" stroke="#16826a"/>
+<text x="640" y="223" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#17324d">B1 · 8.627 s</text>
+<rect x="485" y="250" width="310" height="45" rx="8" fill="#e3f4ee" stroke="#16826a"/>
+<text x="640" y="279" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#17324d">B2 · 4.890 s</text>
+<rect x="485" y="306" width="310" height="45" rx="8" fill="#e3f4ee" stroke="#16826a"/>
+<text x="640" y="335" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#17324d">B3 · 8.942 s</text>
+<rect x="485" y="362" width="310" height="45" rx="8" fill="#e3f4ee" stroke="#16826a"/>
+<text x="640" y="391" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#17324d">B4 · 4.651 s</text>
+<rect x="485" y="418" width="310" height="45" rx="8" fill="#e3f4ee" stroke="#16826a"/>
+<text x="640" y="447" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#17324d">B5 · 5.411 s</text>
+<rect x="485" y="474" width="310" height="45" rx="8" fill="#e3f4ee" stroke="#16826a"/>
+<text x="640" y="503" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#17324d">B6 · 7.654 s</text>
+<text x="1010" y="177" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="bold" fill="#17324d">WASM AOT</text>
+<rect x="855" y="194" width="310" height="45" rx="8" fill="#e3f4ee" stroke="#356aa4"/>
+<text x="1010" y="223" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#17324d">B1 · 6.168 s</text>
+<rect x="855" y="250" width="310" height="45" rx="8" fill="#e3f4ee" stroke="#356aa4"/>
+<text x="1010" y="279" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#17324d">B2 · 7.639 s</text>
+<rect x="855" y="306" width="310" height="45" rx="8" fill="#e3f4ee" stroke="#356aa4"/>
+<text x="1010" y="335" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#17324d">B3 · 5.147 s</text>
+<rect x="855" y="362" width="310" height="45" rx="8" fill="#e3f4ee" stroke="#356aa4"/>
+<text x="1010" y="391" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#17324d">B4 · 7.164 s</text>
+<rect x="855" y="418" width="310" height="45" rx="8" fill="#e3f4ee" stroke="#356aa4"/>
+<text x="1010" y="447" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#17324d">B5 · 9.409 s</text>
+<rect x="855" y="474" width="310" height="45" rx="8" fill="#e3f4ee" stroke="#356aa4"/>
+<text x="1010" y="503" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#17324d">B6 · 9.151 s</text>
+<text x="55" y="584" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="bold" fill="#17324d">Tempo até a primeira v2 correta entre ativações observadas</text>
+<text x="55" y="612" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" fill="#435466">O cenário nativo não tem tempo medido: seis pedidos aceitos, nenhuma ativação no prazo.</text>
+<line x1="280.0" y1="655" x2="280.0" y2="822" stroke="#dce4ea"/>
+<text x="280.0" y="849" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" fill="#435466">0</text>
+<line x1="452.0" y1="655" x2="452.0" y2="822" stroke="#dce4ea"/>
+<text x="452.0" y="849" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" fill="#435466">2</text>
+<line x1="624.0" y1="655" x2="624.0" y2="822" stroke="#dce4ea"/>
+<text x="624.0" y="849" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" fill="#435466">4</text>
+<line x1="796.0" y1="655" x2="796.0" y2="822" stroke="#dce4ea"/>
+<text x="796.0" y="849" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" fill="#435466">6</text>
+<line x1="968.0" y1="655" x2="968.0" y2="822" stroke="#dce4ea"/>
+<text x="968.0" y="849" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" fill="#435466">8</text>
+<line x1="1140.0" y1="655" x2="1140.0" y2="822" stroke="#dce4ea"/>
+<text x="1140.0" y="849" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" fill="#435466">10</text>
+<text x="710" y="879" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" fill="#435466">Segundos</text>
+<text x="55" y="695" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#17324d">WASM interpretado</text>
+<line x1="680.021434752" y1="690" x2="1048.988831686" y2="690" stroke="#16826a" stroke-width="3"/>
+<circle cx="680.021434752" cy="677" r="6" fill="#16826a"/>
+<circle cx="700.529093222" cy="703" r="6" fill="#16826a"/>
+<circle cx="745.329972782" cy="683" r="6" fill="#16826a"/>
+<circle cx="938.260212548" cy="697" r="6" fill="#16826a"/>
+<circle cx="1021.93678469" cy="673" r="6" fill="#16826a"/>
+<circle cx="1048.988831686" cy="707" r="6" fill="#16826a"/>
+<text x="1225" y="695" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" fill="#16826a">mediana 6.533 s</text>
+<text x="55" y="780" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#17324d">WASM AOT</text>
+<line x1="722.660808544" y1="775" x2="1089.210792176" y2="775" stroke="#356aa4" stroke-width="3"/>
+<circle cx="722.660808544" cy="762" r="6" fill="#356aa4"/>
+<circle cx="810.460513086" cy="788" r="6" fill="#356aa4"/>
+<circle cx="896.073438352" cy="768" r="6" fill="#356aa4"/>
+<circle cx="936.92799618" cy="782" r="6" fill="#356aa4"/>
+<circle cx="1066.984468942" cy="758" r="6" fill="#356aa4"/>
+<circle cx="1089.210792176" cy="792" r="6" fill="#356aa4"/>
+<text x="1225" y="780" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" fill="#356aa4">mediana 7.401 s</text>
+<text x="55" y="920" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" fill="#435466">Fonte: CSV público r5. Adjudicação final pendente; perfis legados não qualificam o nativo schema 2.</text>
+</svg>

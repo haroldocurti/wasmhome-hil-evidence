@@ -5,7 +5,7 @@
 | Cenário | Slots válidos / completos | Disparo até v2: mínimo; mediana; máximo (s) | IQR (s) | RTT de aceite: mediana; faixa (ms) |
 |---|---:|---:|---:|---:|
 | Native | 6/6 | 12,975; 14,658; 16,870 | 14,324–15,456 | 5,789; 4,620–6,951 |
-| Interp | 6/6 | 4,660; 6,782; 8,922 | 5,168–7,086 | 7,241; 4,819–10,875 |
+| Interp | 6/6 | 4,660; 6,782; 8,921 | 5,168–7,086 | 7,241; 4,819–10,875 |
 | AOT | 6/6 | 4,676; 6,146; 7,391 | 5,589–6,736 | 10,849; 4,633–12,692 |
 
 ### Volume dos corpos HTTP
@@ -41,4 +41,10 @@ Timeouts e respostas tardias foram preservados nos denominadores e não invalida
 - SHA-256 do relatório de adjudicação: `571c9cb08ab4eb3ad5bb481e81baf06633f2994c5ac23bb22634bfe793a430a8`.
 - Integração pública do relatório e do orquestrador: repositório `wasmhome`, commit [`8677586`](https://github.com/haroldocurti/wasmhome/commit/8677586605eb800762f83addde4cc69f6f4f1539).
 
-Os logs UART, observações UDP/HTTPS, dados por slot e imagens integrais de flash permanecem no armazenamento privado da bancada. O CSV é um resumo descritivo e não permite reconstruir distribuições por slot ou repetir a análise dos registros brutos. Não juntar a r8 aos perfis legados da r5 nem ao corte parcial da r7.
+### Versões efetivamente fixadas na execução
+
+O plano privado da r8 e o diário concluído do orquestrador registram o commit [`315e10f`](https://github.com/haroldocurti/wasmhome/commit/315e10feb2ad9d0d0fbca3ef8e42652433a349fb). O lote concluído registra hashes dos scripts do executor compatíveis com esse commit; o lançador preparado para a r8 verifica essa revisão e a árvore limpa antes do primeiro slot. Os arquivos capturados do observador remoto em cada slot correspondem byte a byte aos arquivos dessa revisão. Esses registros identificam a revisão fixada e os arquivos preservados, sem confundir o campo `git_commit` do plano com um hash dos binários executados. O snapshot de origem dos insumos é registrado separadamente em [`2ee11b6`](https://github.com/haroldocurti/wasmhome/commit/2ee11b678fa4d94f63dba61f25dae3dc764f97b1). O commit `8677586` incorporou posteriormente o relatório público.
+
+O SHA-256 do script do orquestrador, dos quatro arquivos capturados no observador remoto, do manifesto de perfis schema 2 e dos três artefatos estão no [manifesto sanitizado](manifest.json). O hash do manifesto de perfis identifica o conjunto usado sem divulgar caminhos, configurações ou credenciais da bancada.
+
+A [tabela pública com as 18 observações sanitizadas por slot](../../data/r8-piloto-issue20-slots.csv) permite recalcular as distribuições e os agregados por cenário com o [script de sumarização](../../analysis/summarize_r8_pilot.py). Os logs UART completos, as capturas UDP/HTTPS, os registros brutos por slot e as imagens integrais de flash permanecem privados. Portanto, o recálculo estatístico é público, mas a auditoria independente da extração dos valores a partir dos registros brutos ainda não é reproduzível com este pacote. Não juntar a r8 aos perfis legados da r5 nem ao corte parcial da r7.

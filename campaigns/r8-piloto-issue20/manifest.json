@@ -17,7 +17,7 @@
   "schedule_sha256": "52ccaddd2e801f30fa3ffbf5aa527b382bf84f14ce5dd0b406f6ef7e3a7a0d93",
   "source_repository": "https://github.com/haroldocurti/wasmhome",
   "source_evidence_commit": "8677586605eb800762f83addde4cc69f6f4f1539",
-  "execution_runner_revision": "not included in the sanitized public report",
+  "execution_runner_revision": "315e10feb2ad9d0d0fbca3ef8e42652433a349fb",
   "baseline": {
     "size_bytes": 16777216,
     "sha256": "00aa22c35720354383c3d686a14612a7cb2fd99c57cb1ce214d07338c1c167a5",
@@ -55,7 +55,7 @@
       "activation_median_s": 6.782,
       "activation_q1_s": 5.168,
       "activation_q3_s": 7.086,
-      "activation_max_s": 8.922,
+      "activation_max_s": 8.921,
       "accept_rtt_median_ms": 7.241,
       "accept_rtt_min_ms": 4.819,
       "accept_rtt_max_ms": 10.875,
@@ -82,5 +82,38 @@
     }
   },
   "interpretation": "Pilot evidence only; do not pool with r5 legacy profiles or the partial r7 cutoff. The planned 30-block/90-slot campaign remains separate and unexecuted.",
-  "raw_observations_and_firmware": "not included; retained in controlled private storage"
+  "raw_observations_and_firmware": "not included; retained in controlled private storage",
+  "execution_runner_script_sha256": "59ca8451a41e0969bffa85971a498e0cf6c19fc18686b8d863a55c7f86e38bf0",
+  "observer_files_sha256": {
+    "remote_observer.py": "751a13cdd848445526470b8c8a0346c4b711cafe9fdd3f3374ad53497bf1b0f5",
+    "external_observer.py": "9fe5f9f394bfaa80cfa0c4a939a0d0a81eb77aceb3a6598f1176f552c864157f",
+    "observation_protocol_v1.py": "16ca04f35bf8fdeebf3dc6e8b663fe6474b8a34611288ee6fd00692b08c01d86",
+    "update_campaign.py": "ff26a26c4ffa81ebb6b92a73e7e6fd682f4f885d026ac6d19bdf0cb1728e9f4e"
+  },
+  "execution_profiles_schema_version": 2,
+  "execution_profiles_manifest_sha256": "d806601641dc1cc7c87308251f487a4531c7c55fdcad6410b7b6a038d2d158aa",
+  "execution_artifacts_manifest_sha256": "516295973167423008c28f8834774984fb2acb70f1072b14d15c0973c3c99dd3",
+  "execution_artifacts": [
+    {
+      "scenario": "native",
+      "artifact_id": "issue20-r4-native-v2",
+      "size_bytes": 899872,
+      "sha256": "c767928587bc4ab01540da00dbd255e69c1990c1163db74eebe19a673d5fa158"
+    },
+    {
+      "scenario": "interp",
+      "artifact_id": "issue20-r4-interp-v2",
+      "size_bytes": 328,
+      "sha256": "3a972948112397acdaad03c81714a3daf147ecce926f0854341e58a350f3d5c5"
+    },
+    {
+      "scenario": "aot",
+      "artifact_id": "issue20-r4-aot-v2",
+      "size_bytes": 1256,
+      "sha256": "293d78b1af5e0c7e76593d9b8e755692ee311d8427c43d94673ddfd499d5bf53"
+    }
+  ],
+  "input_source_snapshot_revision": "2ee11b678fa4d94f63dba61f25dae3dc764f97b1",
+  "observer_files_match_revision": "315e10feb2ad9d0d0fbca3ef8e42652433a349fb",
+  "execution_revision_evidence": "O plano e o diário concluído do orquestrador registram 315e10f. O lote concluído registra SHA-256 dos scripts do executor compatíveis com essa revisão; o lançador preparado para a r8 verifica HEAD e árvore limpa. Os arquivos capturados do observador remoto correspondem byte a byte aos da mesma revisão. O snapshot de origem dos insumos está registrado separadamente em metadata.json."
 }

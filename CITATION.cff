@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Se usar estes dados ou análises, cite esta versão do repositório."
+title: "WasmHome: dados e evidências experimentais"
+type: dataset
+authors:
+  - family-names: Curti
+    given-names: Haroldo
+repository-code: "https://github.com/haroldocurti/wasmhome-hil-evidence"
+version: 0.1.0
+date-released: 2026-10-18

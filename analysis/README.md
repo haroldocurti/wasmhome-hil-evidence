@@ -6,9 +6,17 @@ A figura r8 apresenta, por cenário, o tempo entre o disparo e a primeira respos
 
 ![r8: tempo até v2 no piloto concluído](figures/r8-piloto-18-slots.png)
 
-Os valores vêm do [CSV agregado por cenário](../data/r8-piloto-issue20-summary.csv); não há observações individuais neste pacote. Os resumos brutos permanecem privados. Para regenerar o SVG e o PNG:
+As 18 observações individuais estão no [CSV sanitizado por slot](../data/r8-piloto-issue20-slots.csv). O [script de resumo](summarize_r8_pilot.py) calcula o [CSV agregado por cenário](../data/r8-piloto-issue20-summary.csv), que alimenta o gráfico. Os resumos brutos permanecem privados. É possível recalcular os números e regenerar a figura com Python 3 (biblioteca padrão) e `rsvg-convert` para o PNG. Versões verificadas nesta entrega: Python 3.14.7 e librsvg 2.62.3.
 
-O [CSV complementar de transferência](../data/r8-piloto-issue20-transfer.csv) resume bytes de artefato, manifesto e corpo HTTP por atualização concluída. É uma contagem dos corpos HTTP registrada pelo servidor, não uma captura do tráfego total de rede.
+```sh
+python3 analysis/summarize_r8_pilot.py \
+  --csv data/r8-piloto-issue20-slots.csv \
+  --check data/r8-piloto-issue20-summary.csv
+```
+
+Para gravar novamente o agregado, trocar `--check` por `--output data/r8-piloto-issue20-summary.csv`. O script exige os seis blocos pareados e valida os campos de resultado. Medidas ausentes ficam vazias no CSV individual e não entram nas estatísticas de tempo; não são convertidas em zero. Mediana e quartis usam interpolação linear inclusiva nas posições `(n−1)×p`, com `p=0,25`, `0,5` e `0,75`; a apresentação do agregado arredonda a três casas decimais.
+
+Para regenerar o SVG e o PNG:
 
 ```sh
 python3 analysis/plot_r8_pilot.py \
@@ -16,6 +24,24 @@ python3 analysis/plot_r8_pilot.py \
   --svg analysis/figures/r8-piloto-18-slots.svg \
   --png analysis/figures/r8-piloto-18-slots.png
 ```
+
+Na revisão dos dados individuais, o máximo do cenário Interp publicado antes como `8.922 s` foi corrigido para `8.921 s`: a medição adjudicada de B0001-interp é `8.921206852 s`, que arredonda para `8.921 s`. O arquivo agregado e a figura foram regenerados. Medianas, quartis, contagens e interpretação do piloto não mudaram.
+
+O [CSV complementar de transferência](../data/r8-piloto-issue20-transfer.csv) resume bytes de artefato, manifesto e corpo HTTP por atualização concluída. É uma contagem dos corpos HTTP registrada pelo servidor, com duas respostas completas por atualização, não uma captura do tráfego total de rede.
+
+## Fase diagnóstica r5 com perfis legados
+
+A [tabela sanitizada da r5](../data/r5-diagnostica-perfis-legados.csv) contém 18 oportunidades em seis blocos. O gráfico mostra a observação funcional por bloco e a distribuição dos tempos apenas onde houve v2 correta no prazo. A adjudicação está pendente; esta fase permanece separada do piloto r8 com perfis schema 2.
+
+![r5: ativação funcional por bloco](figures/r5-diagnostica.png)
+
+Para regenerar o SVG e o PNG a partir do CSV público, na raiz do repositório:
+
+```sh
+python3 analysis/plot_r5_diagnostic.py
+```
+
+O script usa a biblioteca padrão do Python e `rsvg-convert`. Ele grava `analysis/figures/r5-diagnostica.svg` e `analysis/figures/r5-diagnostica.png`.
 
 ## Corte r7 schema 2
 

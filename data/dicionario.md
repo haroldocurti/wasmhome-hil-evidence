@@ -1,6 +1,20 @@
 # Dicionário de dados
 
-O arquivo `r8-piloto-issue20-summary.csv` é agregado por cenário; seus campos descrevem seis slots válidos em cada grupo, não linhas individuais. `latency_q1_s` e `latency_q3_s` são os limites do intervalo interquartil publicados no relatório sanitizado. `max_control_gap_s` e `max_telemetry_gap_s` são os maiores intervalos observados entre os seis slots daquele cenário. Os campos de timeout e resposta tardia são contagens do conjunto por cenário.
+O arquivo `r8-piloto-issue20-slots.csv` contém os 18 slots adjudicados do piloto, em seis blocos pareados. Identificadores de bloco são públicos; identificadores internos, caminhos e registros brutos foram omitidos. As medidas temporais individuais retêm a precisão de nanossegundos da fonte, expressa em segundos com nove casas decimais, ou de nanossegundos expressa em milissegundos com seis casas decimais para o RTT. O valor vazio indica medida ausente, nunca zero.
+
+| Campo individual da r8 | Significado |
+|---|---|
+| `block_id`, `scenario`, `order_in_block` | Bloco público (`B0001` a `B0006`), cenário e posição na agenda pareada. |
+| `pre_window_passed` | Critério da janela antes do disparo satisfeito no resumo do observador. |
+| `update_request_accepted`, `accepted_attempt_status`, `slot_success` | Aceite do despacho, resultado da tentativa aceita e resultado terminal do slot registrados na adjudicação. |
+| `instrument_status`, `adjudication` | Estado instrumental decidido pelo operador; `adjudication=valid` representa o estado `instrument_status=valid` no registro de adjudicação, independentemente da observação de v2. |
+| `v2_observed_within_60s`, `activation_time_s` | Sucesso no prazo e tempo entre envio do disparo e primeira resposta funcional v2 correta, em segundos. |
+| `accept_rtt_ms` | RTT da resposta de aceite, em milissegundos. |
+| `control_timeout_count`, `late_response_count` | Contagens de timeouts e respostas de controle tardias do slot; as tardias não anulam a ativação observada. |
+| `max_control_gap_s`, `max_telemetry_gap_s` | Maiores intervalos observados entre controles e mensagens de telemetria, em segundos. |
+| `post_window_status`, `baseline_restored` | Estado da janela posterior e confirmação de readback da baseline aprovada após o slot. |
+
+O arquivo `r8-piloto-issue20-summary.csv` é agregado por cenário a partir da tabela individual; seus campos descrevem seis slots válidos em cada grupo. `activation_q1_s` e `activation_q3_s` são os limites do intervalo interquartil, calculados por interpolação linear inclusiva. `max_control_gap_s` e `max_telemetry_gap_s` são os maiores intervalos entre os seis slots do cenário. Os campos de timeout e resposta tardia são contagens do conjunto por cenário. O script aplica arredondamento decimal a três casas somente ao gerar este agregado.
 
 | Campo da r8 | Significado |
 |---|---|
@@ -15,7 +29,7 @@ O arquivo `r8-piloto-issue20-summary.csv` é agregado por cenário; seus campos 
 | `max_control_gap_s`, `max_telemetry_gap_s` | Maiores lacunas de controle e telemetria, em segundos. |
 | `stable_post_windows`, `baseline_restored_slots` | Quantidade de janelas pós-atualização estáveis e de slots com baseline restaurada/verificada. |
 
-O arquivo `r8-piloto-issue20-transfer.csv` é agregado por cenário e resume seis atualizações completas por linha. Os campos `artifact_bytes` e `manifest_bytes` descrevem o tamanho do artefato e do manifesto servidos; `http_body_bytes_per_update` é a soma dos dois; `http_body_bytes_total` soma os seis corpos HTTP do cenário. Os valores derivam de registros do servidor com respostas completas `200`. Não representam bytes de rede no fio e não incluem cabeçalhos, TLS/TCP/IP ou retransmissões.
+O arquivo `r8-piloto-issue20-transfer.csv` é agregado por cenário e resume seis atualizações completas por linha. Os campos `artifact_bytes` e `manifest_bytes` descrevem o tamanho do artefato e do manifesto servidos; `http_body_bytes_per_update` é a soma dos dois; `http_body_bytes_total` soma os corpos HTTP das seis atualizações, com duas respostas por atualização (12 por cenário). Os valores derivam de registros do servidor com respostas completas `200`. Não representam bytes de rede no fio e não incluem cabeçalhos, TLS/TCP/IP ou retransmissões.
 
 | Campo de transferência | Significado |
 |---|---|
@@ -25,7 +39,20 @@ O arquivo `r8-piloto-issue20-transfer.csv` é agregado por cenário e resume sei
 | `artifact_bytes` | Tamanho do corpo do artefato, em bytes. |
 | `manifest_bytes` | Tamanho do corpo do manifesto servido, em bytes. |
 | `http_body_bytes_per_update` | Bytes do artefato mais manifesto em uma atualização. |
-| `http_body_bytes_total` | Soma dos bytes de corpos HTTP nas atualizações incluídas. |
+| `http_body_bytes_total` | Soma dos bytes de corpo de 12 respostas HTTP completas nas seis atualizações incluídas. |
+
+O CSV `r5-diagnostica-perfis-legados.csv` registra 18 oportunidades da fase diagnóstica com perfis legados, seis por cenário. A adjudicação está pendente; os campos observados não devem ser interpretados como decisão final de validade. Os tempos ausentes ficam vazios, sem substituição por zero.
+
+| Campo da r5 | Significado |
+|---|---|
+| `block` | Identificador público do bloco pareado (`B0001` a `B0006`). |
+| `scenario` | Cenário `native`, `interp` ou `aot`. |
+| `pre_window_passed` | Resultado da janela de preparo registrado pelo observador (`True` ou `False`). |
+| `update_request_accepted` | Indica aceite da solicitação de atualização (`1` ou `0`). |
+| `v2_observed_within_60s` | Indica observação funcional da v2 correta até 60 s (`1` ou `0`). |
+| `activation_time_s` | Tempo observado até a primeira v2 correta, em segundos; vazio quando não houve ativação medida no prazo. |
+| `instrument_aborted` | Indica aborto declarado pelo instrumento (`True` ou `False`); `False` não substitui a adjudicação. |
+| `adjudication` | Estado da revisão humana (`pendente` nesta tabela). |
 
 O CSV `r7-piloto-schema2-8-slots.csv` registra um corte parcial, não uma campanha encerrada. Campos de ativação descrevem o que o observador registrou; `instrument_status` e `adjudication` descrevem a revisão humana ainda pendente.
 

@@ -29,7 +29,7 @@
 <line x1="633" y1="385.5" x2="667" y2="385.5" stroke="#2672A8" stroke-width="3"/>
 <line x1="633" y1="466.5" x2="667" y2="466.5" stroke="#2672A8" stroke-width="3"/>
 <rect x="612" y="420.4" width="76" height="36.4" fill="#2672A8" fill-opacity="0.22" stroke="#2672A8" stroke-width="2"/>
-<circle cx="650" cy="426.1" r="8" fill="#2672A8" stroke="#fff" stroke-width="2"><title>Interpretado: mediana 6.782 s; faixa 4.660–8.922 s</title></circle>
+<circle cx="650" cy="426.1" r="8" fill="#2672A8" stroke="#fff" stroke-width="2"><title>Interpretado: mediana 6.782 s; faixa 4.660–8.921 s</title></circle>
 <text class="value" x="650" y="411.1" text-anchor="middle">6.782 s</text>
 <text class="category" x="650" y="590" text-anchor="middle">Interpretado</text>
 <text class="tick" x="650" y="612" text-anchor="middle">6/6 válidas</text>

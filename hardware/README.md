@@ -18,11 +18,11 @@ A foto registra a placa ESP32-S3 montada na protoboard, com o cabo USB à direit
 
 ![Ilustração da montagem com USB à direita e conexões J1 identificadas](montagem-estilo-fritzing.png)
 
-A ilustração acompanha a orientação da placa na foto e identifica os contatos do cabeçalho J1. Ela representa a montagem e ajuda a comparar a posição dos fios com a fotografia; o esquema elétrico abaixo é a referência para a leitura das conexões.
+A ilustração acompanha a orientação da placa na foto e identifica os contatos do cabeçalho J1. Ela representa a montagem e ajuda a comparar a posição dos fios com a fotografia; o esquemático original acima é a referência para a leitura das conexões.
 
-## Esquema elétrico e pinagem
+## Esquemático original e pinagem
 
-![Esquema elétrico corrigido da bancada ESP32-S3 e DS18B20](esquematico-da-bancada.png)
+![Esquemático original da bancada ESP32-S3 e DS18B20](esquematico-da-bancada.png)
 
 Na ESP32-S3-DevKitC-1, os contatos J1-1 e J1-2 são 3V3; J1-4 é GPIO4, J1-5 é GPIO5, J1-6 é GPIO6 e J1-22 é GND. As ligações da bancada são:
 

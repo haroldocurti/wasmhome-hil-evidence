@@ -1,0 +1,22 @@
+# Dados brutos e material privado: nunca publicar por engano.
+**/raw/**
+**/private/**
+**/logs/raw/**
+**/hil-orchestrator/journal.json
+**/*baseline*.bin
+**/*profiles-private*.json
+
+# Capturas, firmware e chaves não fazem parte do pacote público de dados.
+*.bin
+*.elf
+*.map
+*.wasm
+*.aot
+*.pcap
+*.pem
+*.key
+*.p12
+*.der
+*.jsonl
+.env
+.env.*

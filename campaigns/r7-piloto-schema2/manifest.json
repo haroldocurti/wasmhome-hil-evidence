@@ -1,0 +1,64 @@
+{
+  "campaign_id": "r7-piloto-schema2",
+  "status_at_cutoff": "in_progress",
+  "cutoff_date": "2026-10-17",
+  "cutoff_definition": "8 slots with complete observer summaries; next slot has no final summary in this export",
+  "planned_blocks": 6,
+  "planned_slots": 18,
+  "observer_summaries_included": 8,
+  "slots_adjudicated": 0,
+  "profile_schema_version": 2,
+  "protocol_revision": "issue20-v1.0",
+  "source_revision": "2ee11b678fa4d94f63dba61f25dae3dc764f97b1",
+  "runner_revision": "c384f8874013d9ce638220907c2612ab1faac256",
+  "hardware": "ESP32-S3 rev. 0.2; external CT107 observer",
+  "toolchains": {
+    "ESP-IDF": "5.2.6",
+    "WAMR": "2.4.5-wasmhome.3"
+  },
+  "observation": {
+    "period_ms": 100,
+    "stable_pre_window_s": 60,
+    "response_timeout_ms": 300,
+    "activation_deadline_s": 60,
+    "post_window_s": 30
+  },
+  "summary": "All 8 included observer summaries show v2 within 60 s; all slot classifications remain pending adjudication.",
+  "ancillary_issue": "5 of 8 records contain a UART challenge error stating the observer session was no longer active; these records are preserved and not automatically classified invalid.",
+  "scenario_summary": {
+    "native": {
+      "n_completed": 3,
+      "n_planned": 6,
+      "n_v2_within_60s": 3,
+      "activation_min_s": 13.792,
+      "activation_max_s": 16.608,
+      "control_gap_min_s": 3.203,
+      "control_gap_max_s": 5.09,
+      "telemetry_gap_min_s": 3.214,
+      "telemetry_gap_max_s": 4.968
+    },
+    "interp": {
+      "n_completed": 3,
+      "n_planned": 6,
+      "n_v2_within_60s": 3,
+      "activation_min_s": 4.63,
+      "activation_max_s": 6.909,
+      "control_gap_min_s": 1.423,
+      "control_gap_max_s": 1.513,
+      "telemetry_gap_min_s": 0.157,
+      "telemetry_gap_max_s": 0.269
+    },
+    "aot": {
+      "n_completed": 2,
+      "n_planned": 6,
+      "n_v2_within_60s": 2,
+      "activation_min_s": 5.89,
+      "activation_max_s": 7.392,
+      "control_gap_min_s": 1.519,
+      "control_gap_max_s": 1.523,
+      "telemetry_gap_min_s": 0.146,
+      "telemetry_gap_max_s": 0.327
+    }
+  },
+  "raw_logs_and_firmware": "not included; retained in controlled local storage"
+}

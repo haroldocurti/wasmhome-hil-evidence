@@ -1,0 +1,4 @@
+scenario,scenario_label,planned_slots,valid_slots,complete_successful_updates,v2_within_60s,activation_min_s,activation_median_s,activation_q1_s,activation_q3_s,activation_max_s,accept_rtt_median_ms,accept_rtt_min_ms,accept_rtt_max_ms,control_timeouts,late_responses,max_control_gap_s,max_telemetry_gap_s,stable_post_windows,baseline_restored_slots
+native,Native,6,6,6,6,12.975,14.658,14.324,15.456,16.870,5.789,4.620,6.951,170,0,2.911,2.873,6,6
+interp,Interp,6,6,6,6,4.660,6.782,5.168,7.086,8.922,7.241,4.819,10.875,94,48,1.535,0.639,6,6
+aot,AOT,6,6,6,6,4.676,6.146,5.589,6.736,7.391,10.849,4.633,12.692,84,48,1.525,0.302,6,6

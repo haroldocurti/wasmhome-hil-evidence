@@ -1,0 +1,9 @@
+﻿campaign_id,protocol_version,profile_schema_version,source_revision,block_id,scenario,order_in_block,slot_id,observer_state,pre_window_passed,update_request_accepted,v2_observed_within_60s,activation_time_s,control_timeout_count,telemetry_unavailable_count,max_control_gap_s,max_telemetry_gap_s,instrument_aborted,instrument_status,ancillary_uart_challenge,adjudication
+r7-piloto-schema2,issue20-v1.0,2,2ee11b678fa4d94f63dba61f25dae3dc764f97b1,B0001,native,1,B0001-native,complete,true,true,true,13.792,50,20,5.090,4.968,false,pending_adjudication,session_not_active,pending
+r7-piloto-schema2,issue20-v1.0,2,2ee11b678fa4d94f63dba61f25dae3dc764f97b1,B0001,interp,2,B0001-interp,complete,true,true,true,6.909,14,0,1.480,0.269,false,pending_adjudication,none_recorded,pending
+r7-piloto-schema2,issue20-v1.0,2,2ee11b678fa4d94f63dba61f25dae3dc764f97b1,B0001,aot,3,B0001-aot,complete,true,true,true,7.392,14,0,1.523,0.146,false,pending_adjudication,none_recorded,pending
+r7-piloto-schema2,issue20-v1.0,2,2ee11b678fa4d94f63dba61f25dae3dc764f97b1,B0002,native,1,B0002-native,complete,true,true,true,15.323,33,14,3.297,3.284,false,pending_adjudication,none_recorded,pending
+r7-piloto-schema2,issue20-v1.0,2,2ee11b678fa4d94f63dba61f25dae3dc764f97b1,B0002,aot,2,B0002-aot,complete,true,true,true,5.890,14,0,1.519,0.327,false,pending_adjudication,session_not_active,pending
+r7-piloto-schema2,issue20-v1.0,2,2ee11b678fa4d94f63dba61f25dae3dc764f97b1,B0002,interp,3,B0002-interp,complete,true,true,true,4.630,14,0,1.513,0.157,false,pending_adjudication,session_not_active,pending
+r7-piloto-schema2,issue20-v1.0,2,2ee11b678fa4d94f63dba61f25dae3dc764f97b1,B0003,interp,1,B0003-interp,complete,true,true,true,5.892,13,0,1.423,0.229,false,pending_adjudication,session_not_active,pending
+r7-piloto-schema2,issue20-v1.0,2,2ee11b678fa4d94f63dba61f25dae3dc764f97b1,B0003,native,2,B0003-native,complete,true,true,true,16.608,33,5,3.203,3.214,false,pending_adjudication,session_not_active,pending

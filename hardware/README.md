@@ -36,4 +36,4 @@ A numeração J1 e as funções dos pinos seguem o [guia oficial da ESP32-S3-Dev
 
 ## Limites da evidência
 
-A foto documenta a montagem física; os diagramas explicam a pinagem e a topologia. Nenhuma figura, isoladamente, demonstra a validade de todos os slots da campanha. Os registros experimentais, os resumos sanitizados e o estado da adjudicação ficam nos diretórios de campanha e dados. Esta pasta faz parte do pacote de evidências preparado para revisão; a cópia atual ainda está local e não foi publicada no GitHub.
+A foto documenta a montagem física; os diagramas explicam a pinagem e a topologia. Nenhuma figura, isoladamente, demonstra a validade de todos os slots da campanha. Os registros experimentais, os resumos sanitizados e o estado da adjudicação ficam nos diretórios de campanha e dados. Esta pasta faz parte do repositório público de evidências. O esquemático original fornecido pelo autor está publicado como PNG; registros brutos, firmware e imagem-base permanecem privados, por isso a reprodução externa da coleta segue limitada.

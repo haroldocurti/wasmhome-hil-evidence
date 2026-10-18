@@ -2,11 +2,11 @@
 
 ## Piloto r8 da issue #20
 
-A figura r8 apresenta, por cenário, o tempo entre o disparo e a primeira resposta v2 correta: linha fina de mínimo a máximo, caixa do intervalo interquartil e ponto da mediana. Cada grupo contém seis slots válidos. Todos os 18 tempos ficaram abaixo do limite protocolar de 60 s.
+A figura r8 apresenta os 18 tempos individuais entre o disparo e a primeira resposta v2 correta, seis por cenário. Cores e padrões de linha identificam os seis blocos; cada linha liga os três slots do mesmo bloco. As linhas representam pareamento, não evolução temporal: a ordem de execução varia entre blocos. Um pequeno deslocamento horizontal fixo por bloco separa pontos próximos, sem representar outra medida. As medianas aparecem abaixo de cada cenário; quartis e extremos continuam disponíveis no CSV agregado. Todos os tempos ficaram abaixo do limite protocolar de 60 s.
 
 ![r8: tempo até v2 no piloto concluído](figures/r8-piloto-18-slots.png)
 
-As 18 observações individuais estão no [CSV sanitizado por slot](../data/r8-piloto-issue20-slots.csv). O [script de resumo](summarize_r8_pilot.py) calcula o [CSV agregado por cenário](../data/r8-piloto-issue20-summary.csv), que alimenta o gráfico. Os resumos brutos permanecem privados. É possível recalcular os números e regenerar a figura com Python 3 (biblioteca padrão) e `rsvg-convert` para o PNG. Versões verificadas nesta entrega: Python 3.14.7 e librsvg 2.62.3.
+As 18 observações individuais estão no [CSV sanitizado por slot](../data/r8-piloto-issue20-slots.csv). O [script de resumo](summarize_r8_pilot.py) calcula o [CSV agregado por cenário](../data/r8-piloto-issue20-summary.csv), usado para as medianas do gráfico. Os pontos e as linhas vêm diretamente do CSV individual; o gerador confere a correspondência do resumo com esses dados. Os resumos brutos permanecem privados. É possível recalcular os números e regenerar a figura com Python 3 (biblioteca padrão) e `rsvg-convert` para o PNG. Versões verificadas nesta entrega: Python 3.14.7 e librsvg 2.62.3.
 
 ```sh
 python3 analysis/summarize_r8_pilot.py \
@@ -21,6 +21,7 @@ Para regenerar o SVG e o PNG:
 ```sh
 python3 analysis/plot_r8_pilot.py \
   --csv data/r8-piloto-issue20-summary.csv \
+  --slots data/r8-piloto-issue20-slots.csv \
   --svg analysis/figures/r8-piloto-18-slots.svg \
   --png analysis/figures/r8-piloto-18-slots.png
 ```

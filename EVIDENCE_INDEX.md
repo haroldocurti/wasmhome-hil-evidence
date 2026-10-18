@@ -21,7 +21,7 @@ O [manifesto da r8](campaigns/r8-piloto-issue20/manifest.json) distingue a revis
 | Figura | Arquivo público e script | Fonte dos dados ou da imagem | Revisão/estado |
 |---|---|---|---|
 | **Figura 1 — diagnóstico r5 por bloco e tempos de ativação modular** | [PNG](analysis/figures/r5-diagnostica.png), [SVG](analysis/figures/r5-diagnostica.svg), [script](analysis/plot_r5_diagnostic.py) | [CSV r5](data/r5-diagnostica-perfis-legados.csv) | Perfis legados; não incluir r7 ou r8 na série. |
-| **Figura 2 — tempo até v2 no piloto r8** | [PNG](analysis/figures/r8-piloto-18-slots.png), [SVG](analysis/figures/r8-piloto-18-slots.svg), [script](analysis/plot_r8_pilot.py) | [Resumo r8](data/r8-piloto-issue20-summary.csv), recalculável dos [18 slots](data/r8-piloto-issue20-slots.csv) | `issue20-v1.0`; n=6 por cenário, sem conclusão confirmatória. |
+| **Figura 2 — tempo até v2 no piloto r8** | [PNG](analysis/figures/r8-piloto-18-slots.png), [SVG](analysis/figures/r8-piloto-18-slots.svg), [script](analysis/plot_r8_pilot.py) | [18 slots](data/r8-piloto-issue20-slots.csv), ligados por bloco, e medianas do [resumo r8](data/r8-piloto-issue20-summary.csv) | `issue20-v1.0`; n=6 por cenário, sem conclusão confirmatória. |
 | **Figura 3 — topologia da bancada** | [PNG](hardware/topologia-experimental.png), [SVG](hardware/topologia-experimental.svg) | [Descrição dos papéis e fluxos](hardware/README.md) | O teste temporário TCP/HTTP placa→CT107 é separado do UDP do observador. |
 | **Figura 4 — esquema elétrico original** | [PNG original](hardware/esquematico-da-bancada.png) | [Pinagem e ligações](hardware/README.md) | Figura original fornecida pelo autor; não foi redesenhada neste pacote. |
 | **Figura 5 — fotografia da montagem real** | [JPG](hardware/foto-bancada-real.jpg) | [Descrição da montagem](hardware/README.md) | A foto documenta a bancada, mas alguns contatos ficam encobertos; consultar o esquemático. |
@@ -31,3 +31,5 @@ O [gráfico do corte r7](analysis/figures/r7-piloto-schema2-corte-8-slots.png) (
 ## Alcance do índice
 
 Este índice cobre as evidências experimentais e a bancada desta contribuição. Elementos anteriores do manuscrito, como arquitetura conceitual, revisão bibliográfica e tabela de calibração do observador, exigem suas próprias fontes e não são derivados dos CSVs de campanha aqui publicados. O [guia de reprodução](reproduce/README.md) distingue a regeneração dos gráficos, o recálculo dos agregados r8 e a repetição da coleta física.
+
+Na versão v0.1.1, a figura pública do piloto passou a exibir pontos individuais e linhas por bloco. Ela substitui visualmente a síntese por caixa e extremos; o documento de contribuição de 18/10/2026 ainda contém a representação anterior. Os dados e as estatísticas não mudaram.

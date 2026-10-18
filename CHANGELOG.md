@@ -1,5 +1,11 @@
 # Histórico do pacote de evidências
 
+## v0.1.1 — 18 de outubro de 2026
+
+- Gráfico do piloto substituído por 18 pontos individuais, com linhas, cores e padrões que identificam o pareamento nos seis blocos. Medianas mantidas abaixo de cada cenário; estatísticas e dados não foram alterados.
+- Script usa o CSV individual e confere o resumo agregado antes de gerar a figura. Documentação e comandos atualizados com `--slots`.
+- PNG e SVG atualizados no repositório; o documento de contribuição mantém a figura anterior.
+
 ## v0.1.0 — 18 de outubro de 2026
 
 Primeira versão marcada do pacote público. O piloto continua com 18 execuções válidas, seis atualizações completas por cenário. A publicação acrescenta meios de conferir os resultados existentes; não representa uma nova coleta.

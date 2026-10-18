@@ -22,11 +22,12 @@ python3 analysis/summarize_r8_pilot.py \
   --output /tmp/r8-summary-recalculado.csv
 ```
 
-Para **regenerar a figura r8** a partir do resumo publicado:
+Para **regenerar a figura r8** a partir das observações individuais e do resumo publicado:
 
 ```sh
 python3 analysis/plot_r8_pilot.py \
   --csv data/r8-piloto-issue20-summary.csv \
+  --slots data/r8-piloto-issue20-slots.csv \
   --svg analysis/figures/r8-piloto-18-slots.svg \
   --png analysis/figures/r8-piloto-18-slots.png
 ```

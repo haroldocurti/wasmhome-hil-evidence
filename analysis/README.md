@@ -8,6 +8,8 @@ A figura r8 apresenta, por cenário, o tempo entre o disparo e a primeira respos
 
 Os valores vêm do [CSV agregado por cenário](../data/r8-piloto-issue20-summary.csv); não há observações individuais neste pacote. Os resumos brutos permanecem privados. Para regenerar o SVG e o PNG:
 
+O [CSV complementar de transferência](../data/r8-piloto-issue20-transfer.csv) resume bytes de artefato, manifesto e corpo HTTP por atualização concluída. É uma contagem dos corpos HTTP registrada pelo servidor, não uma captura do tráfego total de rede.
+
 ```sh
 python3 analysis/plot_r8_pilot.py \
   --csv data/r8-piloto-issue20-summary.csv \

@@ -8,6 +8,12 @@
 | Interp | 6/6 | 4,660; 6,782; 8,922 | 5,168–7,086 | 7,241; 4,819–10,875 |
 | AOT | 6/6 | 4,676; 6,146; 7,391 | 5,589–6,736 | 10,849; 4,633–12,692 |
 
+### Volume dos corpos HTTP
+
+Os registros do servidor para os 18 slots mostram uma resposta completa `200` para o manifesto e outra para o artefato em cada atualização. O corpo HTTP por atualização foi de 900.062 B no nativo (imagem OTA de 899.872 B mais manifesto de 190 B), 520 B no interpretado (módulo WASM de 328 B mais manifesto de 192 B) e 1.469 B no AOT (módulo AOT de 1.256 B mais manifesto de 213 B). Em seis atualizações, os totais de corpos foram 5.400.372 B, 3.120 B e 8.814 B, respectivamente.
+
+Esses valores vêm do campo `bytes_sent` do servidor e contam os corpos HTTP. Não incluem cabeçalhos, handshake ou overhead TLS/TCP/IP, retransmissões nem tráfego fora dessas respostas. O nativo transfere a imagem de firmware; interpretado e AOT transferem módulos, portanto esta é uma descrição do volume observado, não uma comparação normalizada de código ou do tráfego total da rede. A tabela sanitizada e seus critérios estão em [`r8-piloto-issue20-transfer.csv`](../../data/r8-piloto-issue20-transfer.csv) e na [documentação de dados](../../data/README.md#volume-de-transferência-http-no-piloto).
+
 Todos os tempos até v2 ficaram abaixo do limite de 60 s e todos os RTTs de aceite abaixo de 300 ms. As contagens de timeouts/respostas tardias e os maiores intervalos observados foram:
 
 | Cenário | Timeouts de controle | Respostas tardias | Maior lacuna de controle (s) | Maior lacuna de telemetria (s) |
@@ -21,6 +27,7 @@ Timeouts e respostas tardias foram preservados nos denominadores e não invalida
 ## Arquivos sanitizados
 
 - [Resumo agregado por cenário](../../data/r8-piloto-issue20-summary.csv) — os valores publicados não incluem as observações individuais.
+- [Volume de transferência HTTP](../../data/r8-piloto-issue20-transfer.csv) — tamanhos dos artefatos, manifestos e corpos HTTP por cenário.
 - [Agenda balanceada](schedule.json) — seis permutações, com a semente da campanha.
 - [Manifesto e proveniência](manifest.json).
 - [Figura de latência](../../analysis/figures/r8-piloto-18-slots.png) ([SVG](../../analysis/figures/r8-piloto-18-slots.svg)) e [script de geração](../../analysis/plot_r8_pilot.py).

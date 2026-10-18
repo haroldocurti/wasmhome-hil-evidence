@@ -15,6 +15,18 @@ O arquivo `r8-piloto-issue20-summary.csv` é agregado por cenário; seus campos 
 | `max_control_gap_s`, `max_telemetry_gap_s` | Maiores lacunas de controle e telemetria, em segundos. |
 | `stable_post_windows`, `baseline_restored_slots` | Quantidade de janelas pós-atualização estáveis e de slots com baseline restaurada/verificada. |
 
+O arquivo `r8-piloto-issue20-transfer.csv` é agregado por cenário e resume seis atualizações completas por linha. Os campos `artifact_bytes` e `manifest_bytes` descrevem o tamanho do artefato e do manifesto servidos; `http_body_bytes_per_update` é a soma dos dois; `http_body_bytes_total` soma os seis corpos HTTP do cenário. Os valores derivam de registros do servidor com respostas completas `200`. Não representam bytes de rede no fio e não incluem cabeçalhos, TLS/TCP/IP ou retransmissões.
+
+| Campo de transferência | Significado |
+|---|---|
+| `scenario` | Cenário da atualização (`native`, `interp` ou `aot`). |
+| `successful_updates` | Número de atualizações completas incluídas no agregado. |
+| `artifact` | Nome do arquivo de firmware ou módulo servido. |
+| `artifact_bytes` | Tamanho do corpo do artefato, em bytes. |
+| `manifest_bytes` | Tamanho do corpo do manifesto servido, em bytes. |
+| `http_body_bytes_per_update` | Bytes do artefato mais manifesto em uma atualização. |
+| `http_body_bytes_total` | Soma dos bytes de corpos HTTP nas atualizações incluídas. |
+
 O CSV `r7-piloto-schema2-8-slots.csv` registra um corte parcial, não uma campanha encerrada. Campos de ativação descrevem o que o observador registrou; `instrument_status` e `adjudication` descrevem a revisão humana ainda pendente.
 
 | Campo | Significado |

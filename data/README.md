@@ -8,6 +8,12 @@ Os dados publicados devem ser tabulares, sanitizados e vinculados a uma campanha
 
 Todos os 18 slots foram classificados como válidos, a v2 correta foi observada até 60 s em todos e a janela posterior foi estável. Timeouts e respostas tardias de controle permanecem nos denominadores e são informados no resumo. A agenda balanceada sanitizada e o manifesto de proveniência acompanham a [ficha da r8](../campaigns/r8-piloto-issue20/README.md). Não juntar estes dados à r5 ou ao corte parcial r7.
 
+## Volume de transferência HTTP no piloto
+
+`r8-piloto-issue20-transfer.csv` resume, por cenário, os bytes dos artefatos e manifestos e os bytes dos corpos HTTP servidos em cada atualização concluída. O cálculo usa os registros `server.jsonl` dos 18 slots mantidos no armazenamento privado: cada cenário teve seis respostas completas `200` para o manifesto e seis para o artefato. Os registros incluem tamanho, digest, estado HTTP e conclusão da resposta; a tabela pública omite endereços, caminhos locais e identificadores privados.
+
+`http_body_bytes_per_update` soma o artefato e seu manifesto. `http_body_bytes_total` soma os seis corpos de resposta daquele cenário. São bytes de corpo HTTP registrados pelo servidor, não uma captura do tráfego total: cabeçalhos HTTP, handshake e overhead TLS/TCP/IP e retransmissões não entram nessa contagem. O caminho nativo transfere a imagem de firmware; os caminhos WebAssembly transferem somente o módulo de controle. Portanto, a tabela descreve o volume observado nesta configuração do piloto e não é uma comparação normalizada de código nem uma medida geral de eficiência de rede.
+
 ## Conjunto r7 no corte parcial
 
 `r7-piloto-schema2-8-slots.csv` contém oito resumos do observador da r7, de 18 slots planejados. Os oito registram pré-janela aprovada, atualização aceita e v2 observada até 60 s. A classificação de validade dos slots está pendente; cinco registros têm um erro em um desafio UART auxiliar. A figura correspondente e o script de geração ficam em `analysis/`.

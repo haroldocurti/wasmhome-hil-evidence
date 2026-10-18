@@ -24,6 +24,8 @@ A rodada **r7** é um corte parcial separado, com perfis schema 2: oito resumos 
 
 A rodada **r8** é o piloto fechado pela issue #20: 18/18 slots válidos, 6/6 atualizações completas em cada cenário, aceites abaixo de 300 ms e primeira v2 correta abaixo de 60 s. Os timeouts e as respostas tardias de controle foram mantidos e relatados; não invalidaram as capturas. A baseline integral foi restaurada e lida de volta após cada slot. Consulte o [resumo por cenário e agenda balanceada](campaigns/r8-piloto-issue20/README.md).
 
+Os registros do servidor também permitem recuperar os tamanhos dos artefatos e dos corpos HTTP servidos em cada atualização. Esses bytes não incluem o overhead de rede; veja a [tabela sanitizada de transferência](data/r8-piloto-issue20-transfer.csv) e seus limites metodológicos.
+
 A campanha planejada de 30 blocos/90 slots permanece não concluída. A r6 parou durante a preparação, antes de produzir um slot experimental válido. O pré-teste físico da resiliência #22 também parou antes de abrir as capturas e não produziu célula experimental; a baseline foi restaurada e verificada. Esse evento é documentado separadamente e não conta como rejeição, trap ou recuperação.
 
 ## Estrutura

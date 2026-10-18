@@ -1,0 +1,4 @@
+scenario,successful_updates,artifact,artifact_bytes,manifest_bytes,http_body_bytes_per_update,http_body_bytes_total
+native,6,firmware.bin,899872,190,900062,5400372
+interp,6,control.wasm,328,192,520,3120
+aot,6,control.aot,1256,213,1469,8814
